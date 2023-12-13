@@ -34,18 +34,18 @@ add-extensions:
   org.freedesktop.Platform.ffmpeg-full:
     directory: lib/ffmpeg
     version: '23.08'
-    add-ld-path: "."
+    add-ld-path: .
 
 modules:
   - name: libmpv
     buildsystem: meson
     config-opts:
-      - '-Dlibmpv=true'
-      - '-Dlua=disabled'
-      - '-Ddebug=false'
-      - '-Dbuild-date=false'
-      - '-Dcplayer=false'
-      - '-Dmanpage-build=disabled'
+      - -Dlibmpv=true
+      - -Dlua=disabled
+      - -Ddebug=false
+      - -Dbuild-date=false
+      - -Dcplayer=false
+      - -Dmanpage-build=disabled
     sources:
       - type: archive
         url: https://github.com/mpv-player/mpv/archive/refs/tags/v0.37.0.tar.gz
@@ -80,8 +80,8 @@ modules:
           - -Ddoxygen-doc=disabled
         sources:
           - type: archive
-            url: https://linuxtv.org/downloads/v4l-utils/v4l-utils-1.26.0.tar.xz
-            sha256: dab463dc0215e55b2ef1f7a7ab230c3ae8102ea029547eefb4478da0fa8af505
+            url: https://linuxtv.org/downloads/v4l-utils/v4l-utils-1.26.1.tar.xz
+            sha256: 4a71608c0ef7df2931176989e6d32b445c0bdc1030a2376d929c8ca6e550ec4e
             x-checker-data:
               type: anitya
               project-id: 9998
@@ -96,8 +96,8 @@ modules:
           - PREFIX=/app
         sources:
           - type: archive
-            url: 'https://github.com/FFmpeg/nv-codec-headers/archive/refs/tags/n12.1.14.0.tar.gz'
-            sha256: '2fefaa227d2a3b4170797796425a59d1dd2ed5fd231db9b4244468ba327acd0b'
+            url: https://github.com/FFmpeg/nv-codec-headers/archive/refs/tags/n12.1.14.0.tar.gz
+            sha256: 2fefaa227d2a3b4170797796425a59d1dd2ed5fd231db9b4244468ba327acd0b
             x-checker-data:
               type: anitya
               project-id: 223796
@@ -106,11 +106,11 @@ modules:
 
       - name: libass
         config-opts:
-          - '--disable-static'
+          - --disable-static
         sources:
           - type: archive
-            url: 'https://github.com/libass/libass/releases/download/0.17.1/libass-0.17.1.tar.gz'
-            sha256: 'd653be97198a0543c69111122173c41a99e0b91426f9e17f06a858982c2fb03d'
+            url: https://github.com/libass/libass/releases/download/0.17.1/libass-0.17.1.tar.gz
+            sha256: d653be97198a0543c69111122173c41a99e0b91426f9e17f06a858982c2fb03d
             x-checker-data:
               type: anitya
               project-id: 1560
@@ -135,8 +135,8 @@ modules:
       - name: libplacebo
         buildsystem: meson
         config-opts:
-          - '-Dd3d11=disabled'
-          - '-Ddemos=False'
+          - -Dd3d11=disabled
+          - -Ddemos=False
         sources:
           - type: archive
             url: https://code.videolan.org/videolan/libplacebo/-/archive/v6.338.1/libplacebo-v6.338.1.tar.gz
@@ -162,7 +162,7 @@ modules:
           - name: glslang
             buildsystem: cmake-ninja
             config-opts:
-              - '-DBUILD_SHARED_LIBS=ON'
+              - -DBUILD_SHARED_LIBS=ON
             cleanup:
               - /bin
               - /include
@@ -198,12 +198,12 @@ modules:
   - name: wiliwili
     buildsystem: cmake-ninja
     config-opts:
-      - '-DPLATFORM_DESKTOP=ON'
-      - '-DUSE_SYSTEM_CURL=ON'
-      - '-DINSTALL=ON'
-      - '-DCMAKE_BUILD_TYPE=Release'
-      - '-DGLFW_BUILD_WAYLAND=ON'
-      - '-DGLFW_BUILD_X11=ON'
+      - -DPLATFORM_DESKTOP=ON
+      - -DUSE_SYSTEM_CURL=ON
+      - -DINSTALL=ON
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DGLFW_BUILD_WAYLAND=ON
+      - -DGLFW_BUILD_X11=ON
     builddir: true
     sources:
       - type: git
