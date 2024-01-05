@@ -37,6 +37,7 @@ add-extensions:
     add-ld-path: .
 
 modules:
+
   - name: libmpv
     buildsystem: meson
     config-opts:
@@ -56,6 +57,7 @@ modules:
           stable-only: true
           url-template: https://github.com/mpv-player/mpv/archive/refs/tags/v$version.tar.gz
     modules:
+
       - name: libXpresent
         buildsystem: autotools
         sources:
@@ -115,8 +117,9 @@ modules:
       - name: libplacebo
         buildsystem: meson
         config-opts:
+          - -Dglslang=disabled
           - -Dd3d11=disabled
-          - -Ddemos=False
+          - -Ddemos=false
         sources:
           - type: git
             url: https://github.com/haasn/libplacebo.git
@@ -125,42 +128,6 @@ modules:
             x-checker-data:
               type: git
               tag-pattern: ^v([\d.]+)$
-        modules:
-          - name: glslang
-            buildsystem: cmake-ninja
-            config-opts:
-              - -DBUILD_SHARED_LIBS=ON
-            cleanup:
-              - /bin
-              - /include
-              - /lib/cmake
-            sources:
-              - type: archive
-                url: https://github.com/KhronosGroup/glslang/archive/14.0.0.tar.gz
-                sha256: 80bbb916a23e94ea9cbfb1acb5d1a44a7e0c9613bcf5b5947c03f2273bdc92b0
-                x-checker-data:
-                  type: anitya
-                  project-id: 205796
-                  stable-only: true
-                  url-template: https://github.com/KhronosGroup/glslang/archive/$version.tar.gz
-              - type: archive
-                url: https://github.com/KhronosGroup/SPIRV-Tools/archive/refs/tags/sdk-1.3.261.1.tar.gz
-                sha256: ead95c626ad482882a141d1aa0ce47b9453871f72c42c0b28d39c82f60a52008
-                dest: External/spirv-tools
-                x-checker-data:
-                  type: anitya
-                  stable-only: true
-                  project-id: 334920
-                  url-template: https://github.com/KhronosGroup/SPIRV-Tools/archive/refs/tags/sdk-$version.tar.gz
-              - type: archive
-                url: https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/sdk-1.3.261.1.tar.gz
-                sha256: 32b4c6ae6a2fa9b56c2c17233c8056da47e331f76e117729925825ea3e77a739
-                dest: External/spirv-tools/external/spirv-headers
-                x-checker-data:
-                  type: anitya
-                  stable-only: true
-                  project-id: 334920
-                  url-template: https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/sdk-$version.tar.gz
 
   - name: wiliwili
     buildsystem: cmake-ninja
