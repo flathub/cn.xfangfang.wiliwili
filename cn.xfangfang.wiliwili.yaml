@@ -68,26 +68,6 @@ modules:
               stable-only: true
               url-template: https://xorg.freedesktop.org/archive/individual/lib/libXpresent-$version.tar.xz
 
-      - name: libv4l2
-        buildsystem: meson
-        cleanup:
-          - /sbin
-          - /bin
-        config-opts:
-          - -Dbpf=disabled
-          - -Dudevdir=/app/lib/udev
-          - -Ddoxygen-html=false
-          - -Ddoxygen-doc=disabled
-        sources:
-          - type: archive
-            url: https://linuxtv.org/downloads/v4l-utils/v4l-utils-1.26.1.tar.xz
-            sha256: 4a71608c0ef7df2931176989e6d32b445c0bdc1030a2376d929c8ca6e550ec4e
-            x-checker-data:
-              type: anitya
-              project-id: 9998
-              stable-only: true
-              url-template: https://linuxtv.org/downloads/v4l-utils/v4l-utils-$version.tar.xz
-
       - name: nv-codec-headers
         cleanup:
           - '*'
@@ -138,26 +118,13 @@ modules:
           - -Dd3d11=disabled
           - -Ddemos=False
         sources:
-          - type: archive
-            url: https://code.videolan.org/videolan/libplacebo/-/archive/v6.338.1/libplacebo-v6.338.1.tar.gz
-            sha256: f748bf9385f4c228e1379d7d1bed13581176bfdc54eb99f4abe22e649f8dc93f
+          - type: git
+            url: https://github.com/haasn/libplacebo.git
+            commit: 2805a0d01c029084ab36bf5d0e3c8742012a0b27
+            tag: v6.338.1
             x-checker-data:
-              type: anitya
-              project-id: 20101
-              stable-only: true
-              url-template: https://code.videolan.org/videolan/libplacebo/-/archive/v$version/libplacebo-v$version.tar.gz
-          - type: archive
-            url: https://github.com/pallets/markupsafe/archive/refs/tags/2.1.3.tar.gz
-            sha256: b209e55e953eabf4bc31e0c9f3182af03b40e5bf5afed652f72b9b7ac02c0b30
-            dest: 3rdparty/markupsafe
-          - type: archive
-            url: https://github.com/pallets/jinja/archive/refs/tags/3.1.2.tar.gz
-            sha256: ecae76cd1a064d40eb46c5375f07953d747f4d65b68cd3fa5f02c91714b799fc
-            dest: 3rdparty/jinja
-          - type: archive
-            url: https://github.com/Dav1dde/glad/archive/refs/tags/v2.0.4.tar.gz
-            sha256: 02629644c242dcc27c58222bd2c001d5e2f3765dbbcfd796542308bddebab401
-            dest: 3rdparty/glad
+              type: git
+              tag-pattern: ^v([\d.]+)$
         modules:
           - name: glslang
             buildsystem: cmake-ninja
@@ -199,11 +166,12 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - -DPLATFORM_DESKTOP=ON
-      - -DUSE_SYSTEM_CURL=ON
       - -DINSTALL=ON
       - -DCMAKE_BUILD_TYPE=Release
       - -DGLFW_BUILD_WAYLAND=ON
       - -DGLFW_BUILD_X11=ON
+      - -DUSE_SYSTEM_CURL=ON
+      - -DUSE_SYSTEM_SDL2=ON
     builddir: true
     sources:
       - type: git
