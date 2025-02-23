@@ -169,8 +169,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/xfangfang/wiliwili.git
-        tag: v1.5.0
-        commit: 5388a1035ba256839a7cb4c01686204b148b2cae
+        tag: v1.5.1
+        commit: d9715f3030c3ac84879d654b8e0fc31d656814d2
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
