@@ -128,12 +128,18 @@ modules:
           - --disable-programs
           - --disable-encoders
           - --disable-muxers
+          - --disable-demuxers
+          - --disable-protocols
+          - --enable-protocol=file,http,tcp,udp,hls,https,tls,httpproxy
+          - --enable-demuxer=mov,flv,hls
           - --enable-shared
           - --enable-gnutls
           - --enable-gpl
           - --enable-version3
           - --enable-encoder=png
           - --enable-libdav1d
+          - --enable-libass
+          - --enable-libdrm
           - --enable-libfontconfig
           - --enable-libfreetype
           - --enable-libopus
@@ -144,6 +150,10 @@ modules:
           - --enable-libjxl
           - --enable-libxml2
           - --enable-libplacebo
+          - --enable-zlib
+          - --enable-bzlib
+          - --enable-vaapi
+          - --enable-vdpau
           - --enable-vulkan
         sources:
           - type: git
@@ -163,7 +173,7 @@ modules:
       - -DGLFW_BUILD_WAYLAND=ON
       - -DGLFW_BUILD_X11=ON
       - -DUSE_SYSTEM_CURL=ON
-      - -DUSE_SYSTEM_SDL2=ON
+      - -DUSE_EGL=ON
     builddir: true
     sources:
       - type: git
