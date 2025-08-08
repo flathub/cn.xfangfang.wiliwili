@@ -128,12 +128,18 @@ modules:
           - --disable-programs
           - --disable-encoders
           - --disable-muxers
+          - --disable-demuxers
+          - --disable-protocols
+          - --enable-protocol=file,http,tcp,udp,hls,https,tls,httpproxy
+          - --enable-demuxer=mov,flv,hls
           - --enable-shared
           - --enable-gnutls
           - --enable-gpl
           - --enable-version3
           - --enable-encoder=png
           - --enable-libdav1d
+          - --enable-libass
+          - --enable-libdrm
           - --enable-libfontconfig
           - --enable-libfreetype
           - --enable-libopus
@@ -144,6 +150,10 @@ modules:
           - --enable-libjxl
           - --enable-libxml2
           - --enable-libplacebo
+          - --enable-zlib
+          - --enable-bzlib
+          - --enable-vaapi
+          - --enable-vdpau
           - --enable-vulkan
         sources:
           - type: git
@@ -163,13 +173,13 @@ modules:
       - -DGLFW_BUILD_WAYLAND=ON
       - -DGLFW_BUILD_X11=ON
       - -DUSE_SYSTEM_CURL=ON
-      - -DUSE_SYSTEM_SDL2=ON
+      - -DUSE_EGL=ON
     builddir: true
     sources:
       - type: git
         url: https://github.com/xfangfang/wiliwili.git
-        tag: v1.5.1
-        commit: d9715f3030c3ac84879d654b8e0fc31d656814d2
+        tag: v1.5.2
+        commit: 6ec18248c83806316b1b00f296020b94a7ae30dc
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
