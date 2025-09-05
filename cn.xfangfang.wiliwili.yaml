@@ -122,7 +122,7 @@ modules:
         buildsystem: autotools
         sources:
           - type: git
-            url: https://github.com/vcrhonek/hwdata
+            url: https://github.com/vcrhonek/hwdata.git
             tag: v0.399
             commit: 7ba0e54565843faee300ca885699e4c42ed674b2
             x-checker-data:
@@ -133,7 +133,7 @@ modules:
         buildsystem: meson
         sources:
           - type: git
-            url: https://gitlab.freedesktop.org/emersion/libdisplay-info/-/archive/0.3.0/libdisplay-info-0.3.0.tar.gz
+            url: https://gitlab.freedesktop.org/emersion/libdisplay-info.git
             tag: 0.3.0
             commit: 47a5590e9c4eb35d67651b8c05a55f1a48259329
             x-checker-data:
