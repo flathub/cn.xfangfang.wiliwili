@@ -1,6 +1,6 @@
 app-id: cn.xfangfang.wiliwili
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: wiliwili
 finish-args:
