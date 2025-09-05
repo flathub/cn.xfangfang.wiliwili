@@ -118,16 +118,27 @@ modules:
               type: git
               tag-pattern: ^v([\d.]+)$
 
+      - name: hwdata
+        buildsystem: autotools
+        sources:
+          - type: git
+            url: https://github.com/vcrhonek/hwdata
+            tag: v0.399
+            commit: 7ba0e54565843faee300ca885699e4c42ed674b2
+            x-checker-data:
+              type: git
+              tag-pattern: ^v([\d.]+)$
+
       - name: libdisplay-info
         buildsystem: meson
         sources:
-          - type: archive
+          - type: git
             url: https://gitlab.freedesktop.org/emersion/libdisplay-info/-/archive/0.3.0/libdisplay-info-0.3.0.tar.gz
-            sha512: fa023df810d9354135c3a8576233b1a4bab29d943e9ec61ba30cfe512001e4aa56ffc10e1af42ec4d1caa5c10d8e34e3bdbe51d1858d3db580b03a3fa266ee66
+            tag: 0.3.0
+            commit: 47a5590e9c4eb35d67651b8c05a55f1a48259329
             x-checker-data:
-              type: anitya
-              project-id: 326668
-              url-template: https://gitlab.freedesktop.org/emersion/libdisplay-info/-/archive/$version/libdisplay-info-$version.tar.gz
+              type: git
+              tag-pattern: ^([\d.]+)$
 
       - name: ffmpeg
         cleanup:
