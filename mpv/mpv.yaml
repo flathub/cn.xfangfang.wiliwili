@@ -1,5 +1,15 @@
 name: libmpv
 buildsystem: meson
+cleanup:
+  - /include
+  - /lib/pkgconfig
+  - /share/applications
+  - /share/bash-completion
+  - /share/doc
+  - /share/icons
+  - /share/man
+  - /share/zsh
+  - /share/metainfo
 config-opts:
   - -Dalsa=enabled
   - -Dbuild-date=false
@@ -48,7 +58,7 @@ config-opts:
   - -Dvdpau-gl-x11=enabled
   - -Dvdpau=enabled
   - -Dvector=enabled
-  - -Dvulkan=disabled
+  - -Dvulkan=enabled
   - -Dwayland=enabled
   - -Dwerror=false
   - -Dx11=enabled
@@ -210,7 +220,7 @@ modules:
   - name: libplacebo
     buildsystem: meson
     config-opts:
-      - -Dvulkan=disabled
+      - -Dvulkan=enabled
       - -Dshaderc=disabled
       - -Dd3d11=disabled
       - -Ddemos=false
@@ -222,6 +232,8 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
+      - type: patch
+        path: patches/libplacebo-python-3.14.patch
 
   - name: libcdio
     config-opts:
@@ -370,3 +382,20 @@ modules:
       - type: file
         url: https://www.unicode.org/Public/16.0.0/ucd/SpecialCasing.txt
         sha256: 8d5de354eef79f2395a54c9c7dcebbaf3d30fc962d0f85611ea97aa973a0c451
+
+  - name: yt-dlp
+    no-autogen: true
+    no-make-install: true
+    make-args:
+      - yt-dlp
+      - PYTHON=/usr/bin/python3
+    post-install:
+      - install yt-dlp /app/bin
+    sources:
+      - type: git
+        url: https://github.com/yt-dlp/yt-dlp.git
+        tag: 2025.05.22
+        commit: 415b4c9f955b1a0391204bd24a7132590e7b3bdb
+        x-checker-data:
+          type: git
+          tag-pattern: ^([\d.]+)$
