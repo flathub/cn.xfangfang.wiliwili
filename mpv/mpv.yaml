@@ -217,11 +217,60 @@ modules:
           type: git
           tag-pattern: ^R([\d.]+)$
 
+  # runtime shaderc is broken for mpv build.
+  - name: shaderc
+    buildsystem: cmake-ninja
+    builddir: true
+    config-opts:
+      - -DSHADERC_SKIP_COPYRIGHT_CHECK=ON
+      - -DSHADERC_SKIP_EXAMPLES=ON
+      - -DSHADERC_SKIP_TESTS=ON
+      - -DSPIRV_SKIP_EXECUTABLES=ON
+      - -DENABLE_GLSLANG_BINARIES=OFF
+    cleanup:
+      - /bin
+      - /include
+      - /lib/cmake
+      - /lib/pkgconfig
+    sources:
+      - type: git
+        url: https://github.com/google/shaderc.git
+        tag: v2025.3
+        commit: 8c2e602ce440b7739c95ff3d69cecb1adf6becda
+        x-checker-data:
+          type: git
+          tag-pattern: ^v(\d{4}\.\d{1,2})$
+      # spirv-headers, spirv-tools and glslang use specific version. see upstream git tag
+      - type: git
+        url: https://github.com/KhronosGroup/SPIRV-Headers.git
+        tag: vulkan-sdk-1.4.321.0
+        commit: 2a611a970fdbc41ac2e3e328802aed9985352dca
+        dest: third_party/spirv-headers
+        x-checker-data:
+          type: git
+          tag-pattern: ^vulkan-sdk-([\d.]+)$
+      - type: git
+        url: https://github.com/KhronosGroup/SPIRV-Tools.git
+        tag: v2025.3.rc1
+        commit: 33e02568181e3312f49a3cf33df470bf96ef293a
+        dest: third_party/spirv-tools
+        x-checker-data:
+          type: git
+          tag-pattern: ^v(\d{4}\.\d{1}(?:\.rc\d+)?)$
+      - type: git
+        url: https://github.com/KhronosGroup/glslang.git
+        tag: 15.4.0
+        commit: 8a85691a0740d390761a1008b4696f57facd02c4
+        dest: third_party/glslang
+        x-checker-data:
+          type: git
+          tag-pattern: ^(\d{1,2}\.\d{1,2}\.\d{1,4})$
+
   - name: libplacebo
     buildsystem: meson
     config-opts:
       - -Dvulkan=enabled
-      - -Dshaderc=disabled
+      - -Dshaderc=enabled
       - -Dd3d11=disabled
       - -Ddemos=false
     sources:
@@ -394,8 +443,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/yt-dlp/yt-dlp.git
-        tag: 2025.05.22
-        commit: 415b4c9f955b1a0391204bd24a7132590e7b3bdb
+        tag: 2025.09.05
+        commit: 7c27965ff6495f9cb8774a0264bc77b49de57207
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
