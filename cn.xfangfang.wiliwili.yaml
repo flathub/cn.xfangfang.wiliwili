@@ -2,6 +2,8 @@ app-id: cn.xfangfang.wiliwili
 runtime: org.freedesktop.Platform
 runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
+base: io.mpv.Mpv
+base-version: stable
 command: wiliwili
 finish-args:
   - --share=ipc
@@ -29,7 +31,6 @@ cleanup:
   - /share/gtk-doc
 
 modules:
-  - mpv/mpv.yaml
   - name: wiliwili
     buildsystem: cmake-ninja
     config-opts:
