@@ -237,8 +237,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/yt-dlp/yt-dlp.git
-        tag: 2025.09.05
-        commit: 7c27965ff6495f9cb8774a0264bc77b49de57207
+        tag: 2025.09.23
+        commit: 4429fd0450a3fbd5e89573e06533c1a0874fae42
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
@@ -372,8 +372,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/google/shaderc.git
-            tag: v2025.3
-            commit: 8c2e602ce440b7739c95ff3d69cecb1adf6becda
+            tag: v2025.4
+            commit: 73743588fe9c39f2f1c780a087d94afac691a189
             x-checker-data:
               type: git
               tag-pattern: ^v(\d{4}\.\d{1,2})$
@@ -388,16 +388,16 @@ modules:
               tag-pattern: ^vulkan-sdk-([\d.]+)$
           - type: git
             url: https://github.com/KhronosGroup/SPIRV-Tools.git
-            tag: v2025.3.rc1
-            commit: 33e02568181e3312f49a3cf33df470bf96ef293a
+            tag: v2025.4.rc1
+            commit: 7f2d9ee926f98fc77a3ed1e1e0f113b8c9c49458
             dest: third_party/spirv-tools
             x-checker-data:
               type: git
               tag-pattern: ^v(\d{4}\.\d{1}(?:\.rc\d+)?)$
           - type: git
             url: https://github.com/KhronosGroup/glslang.git
-            tag: 15.4.0
-            commit: 8a85691a0740d390761a1008b4696f57facd02c4
+            tag: 16.0.0
+            commit: a57276bf558f5cf94d3a9854ebdf5a2236849a5a
             dest: third_party/glslang
             x-checker-data:
               type: git
