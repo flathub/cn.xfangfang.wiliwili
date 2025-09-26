@@ -101,6 +101,7 @@ modules:
   - name: uchardet
     buildsystem: cmake-ninja
     config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
       - -DCMAKE_BUILD_TYPE=Release
       - -DBUILD_STATIC=0
     sources:
@@ -111,8 +112,6 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
-      - type: patch
-        path: patches/uchardet-cmake.patch
 
   - name: zimg
     config-opts:
@@ -194,7 +193,11 @@ modules:
     sources:
       - type: git
         url: https://github.com/openresty/luajit2.git
+        tag: v2.1-20250826
         commit: dcc9c9ee67e1a5d3d636bd7745e95ddb4a1c70bc
+        x-checker-data:
+          type: git
+          tag-pattern: ^v2.1-([\d\.\-]+)$
       - type: shell
         commands:
           - sed -i 's|/usr/local|/app|' ./Makefile
@@ -237,8 +240,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/yt-dlp/yt-dlp.git
-        tag: 2025.09.05
-        commit: 7c27965ff6495f9cb8774a0264bc77b49de57207
+        tag: 2025.09.23
+        commit: 4429fd0450a3fbd5e89573e06533c1a0874fae42
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
@@ -372,33 +375,22 @@ modules:
         sources:
           - type: git
             url: https://github.com/google/shaderc.git
-            tag: v2025.3
-            commit: 8c2e602ce440b7739c95ff3d69cecb1adf6becda
+            tag: v2025.4
+            commit: 73743588fe9c39f2f1c780a087d94afac691a189
             x-checker-data:
               type: git
               tag-pattern: ^v(\d{4}\.\d{1,2})$
-          # spirv-headers, spirv-tools and glslang use specific version. see upstream git tag
+          # spirv-headers, spirv-tools and glslang use specific reversion.
+          # see upstream DEPS file for details.
           - type: git
             url: https://github.com/KhronosGroup/SPIRV-Headers.git
-            tag: vulkan-sdk-1.4.321.0
-            commit: 2a611a970fdbc41ac2e3e328802aed9985352dca
+            commit: 01e0577914a75a2569c846778c2f93aa8e6feddd
             dest: third_party/spirv-headers
-            x-checker-data:
-              type: git
-              tag-pattern: ^vulkan-sdk-([\d.]+)$
           - type: git
             url: https://github.com/KhronosGroup/SPIRV-Tools.git
-            tag: v2025.3.rc1
-            commit: 33e02568181e3312f49a3cf33df470bf96ef293a
+            commit: 19042c8921f35f7bec56b9e5c96c5f5691588ca8
             dest: third_party/spirv-tools
-            x-checker-data:
-              type: git
-              tag-pattern: ^v(\d{4}\.\d{1}(?:\.rc\d+)?)$
           - type: git
             url: https://github.com/KhronosGroup/glslang.git
-            tag: 15.4.0
-            commit: 8a85691a0740d390761a1008b4696f57facd02c4
+            commit: d213562e35573012b6348b2d584457c3704ac09b
             dest: third_party/glslang
-            x-checker-data:
-              type: git
-              tag-pattern: ^(\d{1,2}\.\d{1,2}\.\d{1,4})$
