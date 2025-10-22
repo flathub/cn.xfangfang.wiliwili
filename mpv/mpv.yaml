@@ -193,8 +193,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/openresty/luajit2.git
-        tag: v2.1-20250826
-        commit: dcc9c9ee67e1a5d3d636bd7745e95ddb4a1c70bc
+        tag: v2.1-20251022
+        commit: b65ec19dccd61b9f5ed3258b6eee8d0ed714b140
         x-checker-data:
           type: git
           tag-pattern: ^v2.1-([\d\.\-]+)$
