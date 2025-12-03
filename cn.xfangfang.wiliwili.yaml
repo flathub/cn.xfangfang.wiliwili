@@ -51,3 +51,5 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
+      - type: patch
+              path: mpv/patches/fix-build-with-fmt-12.1.0.patch
