@@ -52,4 +52,4 @@ modules:
           type: git
           tag-pattern: ^v([\d.]+)$
       - type: patch
-              path: mpv/patches/fix-build-with-fmt-12.1.0.patch
+          path: mpv/patches/fix-build-with-fmt-12.1.0.patch
