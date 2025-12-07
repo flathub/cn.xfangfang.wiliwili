@@ -46,10 +46,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/xfangfang/wiliwili.git
-        tag: v1.5.2
-        commit: 6ec18248c83806316b1b00f296020b94a7ae30dc
+        tag: v1.5.3
+        commit: e3fcce225d6f5d887096701e642ec7d5da13d47f
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
-      - type: patch
-        path: mpv/patches/fix-build-with-fmt-12.1.0.patch
