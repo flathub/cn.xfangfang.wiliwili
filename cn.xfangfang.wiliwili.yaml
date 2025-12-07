@@ -36,12 +36,14 @@ modules:
       - -DPLATFORM_DESKTOP=ON
       - -DINSTALL=ON
       - -DCMAKE_BUILD_TYPE=Release
-      - -DGLFW_BUILD_WAYLAND=ON
-      - -DGLFW_BUILD_X11=ON
+      - -DUSE_SDL2=ON
       - -DUSE_SYSTEM_CURL=ON
       - -DUSE_SYSTEM_FMT=ON
       - -DUSE_SYSTEM_SDL2=ON
+      - -DUSE_GLES2=OFF
       - -DUSE_EGL=ON
+      - -DBRLS_UNITY_BUILD=ON
+      - -DCMAKE_UNITY_BUILD_BATCH_SIZE=16
     builddir: true
     sources:
       - type: git
