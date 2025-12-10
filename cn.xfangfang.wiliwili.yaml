@@ -36,7 +36,9 @@ modules:
       - -DPLATFORM_DESKTOP=ON
       - -DINSTALL=ON
       - -DCMAKE_BUILD_TYPE=Release
-      - -DUSE_SDL2=ON
+      - -DUSE_GLFW=ON
+      - -DGLFW_BUILD_WAYLAND=ON
+      - -DGLFW_BUILD_X11=ON
       - -DUSE_SYSTEM_CURL=ON
       - -DUSE_SYSTEM_FMT=ON
       - -DUSE_SYSTEM_SDL2=ON
@@ -53,3 +55,5 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
+      - type: patch
+        path: update-gamepad-mappings.patch
