@@ -48,7 +48,6 @@ config-opts:
   - -Dsdl2-audio=enabled
   - -Dsdl2-gamepad=enabled
   - -Dsdl2-video=enabled
-  - -Dsdl2=enabled
   - -Duchardet=enabled
   - -Dvaapi-drm=enabled
   - -Dvaapi-wayland=enabled
@@ -63,13 +62,14 @@ config-opts:
   - -Dwerror=false
   - -Dx11=enabled
   - -Dxv=enabled
+  - -Dx11-clipboard=enabled
   - -Dzimg=enabled
   - -Dzlib=enabled
 sources:
   - type: git
     url: https://github.com/mpv-player/mpv.git
-    tag: v0.40.0
-    commit: e48ac7ce08462f5e33af6ef9deeac6fa87eef01e
+    tag: v0.41.0
+    commit: 41f6a645068483470267271e1d09966ca3b9f413
     x-checker-data:
       type: git
       tag-pattern: ^v([\d.]+)$
