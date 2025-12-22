@@ -286,8 +286,7 @@ modules:
                 .browser_download_url
 
   - name: libdvdnav
-    config-opts:
-      - --disable-static
+    buildsystem: meson
     cleanup:
       - /include
       - /lib/pkgconfig
@@ -302,8 +301,7 @@ modules:
           url-template: https://download.videolan.org/pub/videolan/libdvdnav/$version/libdvdnav-$version.tar.xz
     modules:
       - name: libdvdread
-        config-opts:
-          - --disable-static
+        buildsystem: meson
         cleanup:
           - /include
           - /lib/pkgconfig
