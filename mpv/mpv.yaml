@@ -163,8 +163,8 @@ modules:
     sources:
       - type: git
         url: https://code.videolan.org/videolan/libbluray.git
-        tag: 1.4.0
-        commit: 9f07fbb2077be7a40b062bcf2463a9941c2a3b13
+        tag: 1.4.1
+        commit: 7d94f2660af5bfc16015291a03539329135c18f1
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
