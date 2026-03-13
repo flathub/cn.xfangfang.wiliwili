@@ -240,8 +240,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/yt-dlp/yt-dlp.git
-        tag: 2026.03.03
-        commit: b8058cdf378cbbf60669b665dea146fb7dc90117
+        tag: 2026.03.13
+        commit: 990fdf36dd985403cb171e4b92d1d7f01a4e273d
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
@@ -347,8 +347,8 @@ modules:
     sources:
       - type: git
         url: https://code.videolan.org/videolan/libplacebo.git
-        tag: v7.360.0
-        commit: b2ea27dceb6418aabfe9121174c6dbb232942998
+        tag: v7.360.1
+        commit: cee9b076f2c63104ccfd497fa79c39a867293ec4
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
