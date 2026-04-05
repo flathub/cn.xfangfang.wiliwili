@@ -144,8 +144,10 @@ modules:
           tag-pattern: ^v([\d.]+)$
 
   - name: vapoursynth
-    config-opts:
-      - --with-python-prefix=${FLATPAK_DEST}
+    buildsystem: meson
+    cleanup:
+      - /include
+      - /lib/pkgconfig
     sources:
       - type: git
         url: https://github.com/vapoursynth/vapoursynth.git
