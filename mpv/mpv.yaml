@@ -73,6 +73,8 @@ sources:
     x-checker-data:
       type: git
       tag-pattern: ^v([\d.]+)$
+  - type: patch
+    path: fix-vapoursynth-R74.patch
 
 modules:
   - name: libXpresent
@@ -144,8 +146,10 @@ modules:
           tag-pattern: ^v([\d.]+)$
 
   - name: vapoursynth
-    config-opts:
-      - --with-python-prefix=${FLATPAK_DEST}
+    buildsystem: meson
+    cleanup:
+      - /include
+      - /lib/pkgconfig
     sources:
       - type: git
         url: https://github.com/vapoursynth/vapoursynth.git
