@@ -50,8 +50,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/xfangfang/wiliwili.git
-        tag: v1.5.3
-        commit: e3fcce225d6f5d887096701e642ec7d5da13d47f
+        tag: v1.6.0
+        commit: 88e5876bea9502d06f46a8656e3530684d3aaf7d
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
