@@ -73,8 +73,6 @@ sources:
     x-checker-data:
       type: git
       tag-pattern: ^v([\d.]+)$
-  - type: patch
-    path: fix-vapoursynth-R74.patch
 
 modules:
   - name: libXpresent
