@@ -75,6 +75,8 @@ sources:
       tag-pattern: ^v([\d.]+)$
   - type: patch
     path: fix-vapoursynth-R74.patch
+  - type: patch
+    path: improve-vapoursynth-backward-compatibility.patch
 
 modules:
   - name: libXpresent
