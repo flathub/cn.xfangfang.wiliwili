@@ -153,11 +153,11 @@ modules:
     sources:
       - type: git
         url: https://github.com/vapoursynth/vapoursynth.git
-        tag: R75
-        commit: c05906995662bacd5bddf853d8e68f19286987db
-        x-checker-data:
-          type: git
-          tag-pattern: ^R([\d.]+)$
+        tag: R74
+        commit: 140ed20676a2863cd8542030e630b13454035233
+        # x-checker-data:
+        #   type: git
+        #   tag-pattern: ^R([\d.]+)$
 
   - name: libbluray
     buildsystem: meson
