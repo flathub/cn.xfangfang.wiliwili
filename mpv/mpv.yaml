@@ -244,8 +244,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/yt-dlp/yt-dlp.git
-        tag: 2026.06.09
-        commit: 7f7bdc974dc61d941d1a0d51c4e21a0fdb7b2d06
+        tag: 2026.07.04
+        commit: fdec00e0bf530dc6c3cc7b1dd780e95d9ae460e9
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
@@ -335,8 +335,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/vcrhonek/hwdata.git
-            tag: v0.408
-            commit: 4456b256a1a5b1d1c1c1a60a9f69c59f7743c522
+            tag: v0.409
+            commit: 73fa04de426aefe192505fcbc6c24237a9fd9c9b
             x-checker-data:
               type: git
               tag-pattern: ^v([\d.]+)$
