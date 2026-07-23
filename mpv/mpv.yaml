@@ -324,8 +324,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.freedesktop.org/emersion/libdisplay-info.git
-        tag: 0.3.0
-        commit: 47a5590e9c4eb35d67651b8c05a55f1a48259329
+        tag: 0.4.0
+        commit: c67a3e9bedb05ab61c7443704a1a107e76254595
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
