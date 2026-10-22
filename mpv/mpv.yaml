@@ -197,8 +197,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/openresty/luajit2.git
-        tag: v2.1-20261015
-        commit: f6a9b2a6f0386bac736655703e90f1ef534bfbdc
+        tag: v2.1-20261021
+        commit: 12379eb4fd2e3718387b421048307b4771fef79b
         x-checker-data:
           type: git
           tag-pattern: ^v2.1-([\d\.\-]+)$
@@ -244,8 +244,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/yt-dlp/yt-dlp.git
-        tag: 2026.08.19
-        commit: 3a08beaf031ab68f966401ead017ac81fe8486cf
+        tag: 2026.10.21
+        commit: 6ccd977303412151ee23352c6257dd658ffc1987
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
