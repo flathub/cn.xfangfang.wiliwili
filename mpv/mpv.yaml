@@ -68,8 +68,8 @@ config-opts:
 sources:
   - type: git
     url: https://github.com/mpv-player/mpv.git
-    tag: v0.41.0
-    commit: 41f6a645068483470267271e1d09966ca3b9f413
+    tag: v0.42.0
+    commit: b0841e8c4d156b8403dc1876c4cbd9011eb583f3
     x-checker-data:
       type: git
       tag-pattern: ^v([\d.]+)$
@@ -197,8 +197,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/openresty/luajit2.git
-        tag: v2.1-20261023
-        commit: 5d8d0a27bfa4595b24b8ed36123555fcd2bb2f8c
+        tag: v2.1-20261107
+        commit: a9381a0912c2423a51fb1986d2d6f19ca9e8daed
         x-checker-data:
           type: git
           tag-pattern: ^v2.1-([\d\.\-]+)$
