@@ -68,8 +68,8 @@ config-opts:
 sources:
   - type: git
     url: https://github.com/mpv-player/mpv.git
-    tag: v0.41.0
-    commit: 41f6a645068483470267271e1d09966ca3b9f413
+    tag: v0.42.0
+    commit: b0841e8c4d156b8403dc1876c4cbd9011eb583f3
     x-checker-data:
       type: git
       tag-pattern: ^v([\d.]+)$
@@ -197,8 +197,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/openresty/luajit2.git
-        tag: v2.1-20261023
-        commit: 5d8d0a27bfa4595b24b8ed36123555fcd2bb2f8c
+        tag: v2.1-20261117
+        commit: 2769af8852a4b32687dfdfc55040c4cb4e6a8417
         x-checker-data:
           type: git
           tag-pattern: ^v2.1-([\d\.\-]+)$
@@ -244,8 +244,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/yt-dlp/yt-dlp.git
-        tag: 2026.10.26
-        commit: f264a6cbd1f630894da0f368df00f8aae50140e0
+        tag: 2026.11.23
+        commit: 6f73a8d1664a58cdef8c25f01ffb5ab9cf730408
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
